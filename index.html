@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magical Code Quest - Level 3</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-family: Georgia, serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin-top: 25px;
+            border-radius: 8px;
+            border: none;
+            background-color: gold;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        pre {
+            background-color: #111;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+            border-radius: 10px;
+            display: none;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🧙 Magical Code Quest</h1>
+<hr>
+
+<h2>Level 3: The Rescue Mission</h2>
+
+<p>
+Welcome to Hogwarts. But celebrations must wait.<br>
+A dark force is spreading through the castle, and students are in danger.
+</p>
+
+<p>
+Your mission: Find Harry Potter, Ron Weasley, Hermione Granger.<br>
+Their location is encrypted in the puzzle before you.<br>
+Crack it, find the location, and continue the rescue mission.
+</p>
+
+<button onclick="showCode()">🔓 Solve Puzzle</button>
+
+<pre id="codeBlock">
+
+#include <stdio.h>
+#include <string.h>
+
+// Magical Decryption Engine
+
+int calculateKey() {
+    int x = 7, y = 3;
+    int sum = 0;
+
+    for(int i = 1; i <= x; i++) {
+        sum += (i * y);
+    }
+
+    return sum % 10;
+}
+
+void decryptLocation() {
+
+    printf("==============================================\n");
+    printf("✨ Magical Decryption Complete ✨\n\n");
+
+    printf("Congratulations! You solved the puzzle and discovered your friend's location.\n\n");
+    printf("📍 It is in the place below the 1st floor,\n");
+    printf("🏛️ at one of the four pillars.\n\n");
+
+    printf("Proceed immediately. Time is limited!\n");
+    printf("==============================================\n");
+}
+
+int main() {
+
+    int secretKey = calculateKey();
+
+    if(secretKey >= 0) {
+        decryptLocation();
+    }
+
+    return 0;
+}
+
+</pre>
+
+<script>
+function showCode() {
+    document.getElementById("codeBlock").style.display = "block";
+}
+</script>
+
+</body>
+</html>
