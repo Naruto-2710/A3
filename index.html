@@ -42,38 +42,39 @@
 
 <h2>Level 3: The Rescue Mission</h2>
 
-<p>
-Your mission: Crack the puzzle and reveal the HTML code.
-</p>
+<p>Crack the puzzle to reveal the HTML code.</p>
 
 <button onclick="showCode()">🔓 Solve Puzzle</button>
 
-<pre id="codeBlock">
-
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Magical Decryption Engine&lt;/title&gt;
-&lt;/head&gt;
-
-&lt;body style="background:black; color:lime; font-family:monospace; text-align:center; padding-top:50px;"&gt;
-
-&lt;h2&gt;✨ Magical Decryption Complete ✨&lt;/h2&gt;
-&lt;p&gt;Congratulations! You solved the puzzle.&lt;/p&gt;
-&lt;p&gt;📍 Location: Below the first floor, near one of the four pillars.&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-
-</pre>
+<pre id="codeBlock"></pre>
 
 <script>
 function showCode() {
-    document.getElementById("codeBlock").style.display = "block";
+
+    const htmlCode = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magical Decryption Engine</title>
+</head>
+<body style="background:black; color:lime; font-family:monospace; text-align:center; padding-top:50px;">
+
+<h2>✨ Magical Decryption Complete ✨</h2>
+<p>Congratulations! You solved the puzzle.</p>
+<p>📍 Location: Below the first floor, near one of the four pillars.</p>
+
+</body>
+</html>
+`;
+
+    const codeBlock = document.getElementById("codeBlock");
+    codeBlock.textContent = htmlCode;   // IMPORTANT: textContent (not innerHTML)
+    codeBlock.style.display = "block";
 }
 </script>
 
 </body>
 </html>
+
 
