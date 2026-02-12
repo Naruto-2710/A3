@@ -56,45 +56,75 @@ Crack it, find the location, and continue the rescue mission.
 
 <pre id="codeBlock">
 
-#include <stdio.h>
-#include <string.h>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magical Decryption Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
 
-// Magical Decryption Engine
+        .box {
+            border: 2px solid #fff;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+        }
 
-int calculateKey() {
-    int x = 7, y = 3;
-    int sum = 0;
+        h2 {
+            color: #ffd700;
+        }
 
-    for(int i = 1; i <= x; i++) {
-        sum += (i * y);
+        .highlight {
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box" id="output"></div>
+
+<script>
+    // Magical Decryption Engine
+
+    function calculateKey() {
+        let x = 7, y = 3;
+        let sum = 0;
+
+        for (let i = 1; i <= x; i++) {
+            sum += (i * y);
+        }
+
+        return sum % 10;
     }
 
-    return sum % 10;
-}
-
-void decryptLocation() {
-
-    printf("==============================================\n");
-    printf("✨ Magical Decryption Complete ✨\n\n");
-
-    printf("Congratulations! You solved the puzzle and discovered your friend's location.\n\n");
-    printf("📍 It is in the place below the 1st floor,\n");
-    printf("🏛️ at one of the four pillars.\n\n");
-
-    printf("Proceed immediately. Time is limited!\n");
-    printf("==============================================\n");
-}
-
-int main() {
-
-    int secretKey = calculateKey();
-
-    if(secretKey >= 0) {
-        decryptLocation();
+    function decryptLocation() {
+        return `
+        <h2>✨ Magical Decryption Complete ✨</h2>
+        <p>Congratulations! You solved the puzzle and discovered your friend's location.</p>
+        <p class="highlight">📍 It is in the place below the 1st floor,</p>
+        <p class="highlight">🏛️ at one of the four pillars.</p>
+        <p><strong>Proceed immediately. Time is limited!</strong></p>
+        `;
     }
 
-    return 0;
-}
+    let secretKey = calculateKey();
+
+    if (secretKey >= 0) {
+        document.getElementById("output").innerHTML = decryptLocation();
+    }
+</script>
+
+</body>
+</html>
+
 
 </pre>
 
